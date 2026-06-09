@@ -1,4 +1,4 @@
-// backend/server.js
+
 const express = require('express');
 const cors = require('cors');
 const { Pool } = require('pg');
@@ -7,12 +7,12 @@ require('dotenv').config();
 const app = express();
 const PORT = process.env.PORT || 5000;
 
-// Konfigurasi Database Pool
+
 const pool = new Pool({
   connectionString: process.env.DATABASE_URL,
 });
 
-// Test Koneksi DB saat Server Menyala
+
 pool.connect((err, client, release) => {
   if (err) {
     return console.error('[LockedIn DB] Gagal terhubung ke database:', err.stack);
@@ -21,18 +21,18 @@ pool.connect((err, client, release) => {
   release();
 });
 
-// Middleware
+
 app.use(cors());
 app.use(express.json());
 
-// ==================== ENDPOINT API ====================
 
-// 1. Endpoint Health Check
+
+
 app.get('/api/health', (req, res) => {
     res.json({ status: "success", message: "API & DB LockedIn terkoneksi!" });
 });
 
-// 2. Endpoint Mengambil Data Jadwal Kalender (Sesuai Gambar UI Kalender)
+
 app.get('/api/calendar/:userId', async (req, res) => {
     const { userId } = req.params;
     try {
@@ -55,3 +55,5 @@ app.get('/api/calendar/:userId', async (req, res) => {
 app.listen(PORT, () => {
     console.log(`[LockedIn API] Server running on port ${PORT}`);
 });
+
+module.exports = app;
