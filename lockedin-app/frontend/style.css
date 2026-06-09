@@ -1,0 +1,222 @@
+/* Warna Palet Utama LockedIn (Dark Mode Premium) */
+:root {
+  --bg-main: #0a0f1d;
+  --bg-card: #121826;
+  --border-color: #1f293d;
+  --text-main: #f8fafc;
+  --text-muted: #64748b;
+  
+  /* Warna Event Tags */
+  --tag-gray: #27272a;
+  --tag-blue: #1d4ed8;
+  --tag-darkblue: #1e1b4b;
+  --tag-magenta: #701a75;
+  --tag-purple: #4c1d95;
+  --tag-orange: #7c2d12;
+}
+
+body {
+  background-color: var(--bg-main);
+  color: var(--text-main);
+  font-family: 'Inter', sans-serif;
+  padding: 20px;
+}
+
+/* Container Utama */
+.lockedin-calendar-container {
+  background-color: var(--bg-main);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 24px;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+/* Header */
+.cal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.cal-title-section {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.cal-today-badge {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 6px 12px;
+  font-weight: bold;
+}
+
+.cal-month-short {
+  font-size: 11px;
+  color: var(--text-muted);
+}
+
+.cal-date-num {
+  font-size: 20px;
+}
+
+.cal-current-date h2 {
+  font-size: 24px;
+  font-weight: 600;
+}
+
+.cal-current-date p {
+  color: var(--text-muted);
+  font-size: 14px;
+}
+
+/* Tombol Kontrol Navigasi */
+.cal-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.btn-nav, .btn-text, .btn-primary, .filter-tag {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  color: var(--text-main);
+  padding: 8px 14px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: all 0.2s ease;
+}
+
+.btn-nav:hover, .btn-text:hover {
+  background-color: var(--border-color);
+}
+
+.btn-primary {
+  background-color: #f8fafc;
+  color: #0a0f1d;
+  font-weight: 500;
+  border: none;
+}
+
+.btn-primary:hover {
+  background-color: #e2e8f0;
+}
+
+/* Filter Tags */
+.cal-filters {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 24px;
+}
+
+.filter-tag.active {
+  background-color: var(--border-color);
+  border-color: #475569;
+}
+
+/* Wrapper Grid Kalender */
+.cal-grid-wrapper {
+  position: relative; /* Untuk penempatan garis penunjuk waktu merah */
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--bg-card);
+  overflow: hidden;
+}
+
+/* Grid Inti (8 Kolom: 1 Kolom Waktu + 7 Kolom Hari) */
+.cal-grid {
+  display: grid;
+  grid-template-columns: 80px repeat(7, 1fr);
+  grid-auto-rows: minmax(70px, auto);
+}
+
+/* Elemen Header Hari */
+.day-header {
+  padding: 16px;
+  text-align: center;
+  font-weight: 500;
+  color: var(--text-muted);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
+}
+
+.time-col-header {
+  border-bottom: 1px solid var(--border-color);
+}
+
+.day-header.current-day {
+  color: #3b82f6; /* Highlight hari ini */
+  background-color: rgba(59, 130, 246, 0.05);
+}
+
+/* Elemen Penunjuk Jam di Sebelah Kiri */
+.time-label {
+  padding: 10px;
+  text-align: right;
+  font-size: 12px;
+  color: var(--text-muted);
+  border-bottom: 1px solid transparent;
+}
+
+/* Sel Grid Tempat Menyimpan Event */
+.grid-cell {
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid rgba(31, 41, 61, 0.5); /* Garis tipis pembatas jam */
+  padding: 4px;
+  min-height: 70px;
+}
+
+/* Desain Komponen Event Card Dinamis */
+.event-card {
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 13px;
+  font-weight: 500;
+  height: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.event-card .time {
+  font-size: 11px;
+  opacity: 0.6;
+  margin-top: 4px;
+}
+
+/* Varian Warna Sesuai Gambar Mockup */
+.c-gray { background-color: var(--tag-gray); border-left: 3px solid #71717a; }
+.c-blue { background-color: var(--tag-blue); border-left: 3px solid #3b82f6; }
+.c-darkblue { background-color: var(--tag-darkblue); border-left: 3px solid #6366f1; }
+.c-magenta { background-color: var(--tag-magenta); border-left: 3px solid #d946ef; }
+.c-purple { background-color: var(--tag-purple); border-left: 3px solid #a855f7; }
+.c-orange { background-color: var(--tag-orange); border-left: 3px solid #f97316; }
+
+/* Garis Merah Penunjuk Waktu Sekarang */
+.current-time-line {
+  position: absolute;
+  left: 80px;
+  right: 0;
+  height: 2px;
+  background-color: #ef4444;
+  z-index: 10;
+  pointer-events: none;
+}
+
+.current-time-line::before {
+  content: '';
+  position: absolute;
+  left: -4px;
+  top: -3px;
+  width: 8px;
+  height: 8px;
+  background-color: #ef4444;
+  border-radius: 50%;
+}
