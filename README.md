@@ -5,9 +5,9 @@ gomogomuu -> geronimo Cesario
 Apliikasi LockedIN (Beta) hanya untuk testing dimana 
 
 sudah menghadirkan beberapa fungsi utama aplikasi 
-fungsi utama -Samart calendar
-fungsi threads -> untuk threads kelompok 
-fungsi contribution team member -> dapat mengumpulkan file dan mendownloadnnya. 
+fungsi utama -Samart calendar,
+fungsi threads -> untuk threads kelompok,
+fungsi contribution team member -> dapat mengumpulkan file dan mendownloadnnya, dan
 terdapat validasi logika 
 
 Minus : 
